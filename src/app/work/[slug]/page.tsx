@@ -41,7 +41,7 @@ export default async function WorkPage({ params }: PageProps) {
     <article className="max-w-[1180px] mx-auto px-6 md:px-10 pt-12 md:pt-20 pb-24">
       {/* HERO */}
       <header className="border-b border-border pb-12 mb-16">
-        <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-text-dim mb-8 flex flex-wrap items-center gap-3">
+        <div className="font-mono text-[11px] tracking-[0.18em] uppercase text-text-dim mb-8 flex flex-wrap items-center gap-1.5">
           <Link href="/work" className="hover:text-accent transition-colors">
             ← work
           </Link>

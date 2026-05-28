@@ -3,7 +3,7 @@ import { Hypothesis } from "@/components/mdx/hypothesis";
 import { Canvas } from "@/components/mdx/canvas";
 import { Flowchart } from "@/components/mdx/flowchart";
 import { BeforeAfter } from "@/components/mdx/before-after";
-import { Stat } from "@/components/mdx/stat";
+import { Stat, Stats } from "@/components/mdx/stat";
 import { Quote } from "@/components/mdx/quote";
 import { Gallery } from "@/components/mdx/gallery";
 import { Details } from "@/components/mdx/details";
@@ -78,6 +78,7 @@ const components: MDXComponents = {
   Flowchart,
   BeforeAfter,
   Stat,
+  Stats,
   Quote,
   Gallery,
   Details,
