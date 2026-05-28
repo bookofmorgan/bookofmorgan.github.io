@@ -1,0 +1,44 @@
+---
+title: Signal Ledger
+thesis: An append-only log for the qualitative evidence that should be informing your roadmap but never is.
+role: Solo build
+year: 2024
+tags: [app, code]
+featured: true
+order: 2
+---
+
+## Problem
+
+Every product team I've talked to has the same private folder: screenshots of customer messages,
+half-finished interview notes, Slack DMs forwarded to themselves. The signal is there. It just
+never makes it into the decision.
+
+## Hypothesis
+
+<Hypothesis
+  belief="Teams will route customer signal through a single append-only inbox if writing to it takes under five seconds"
+  reason="the friction isn't reading the signal, it's getting it into a place where it's read"
+  signal="60% of captured signal is referenced in a roadmap discussion within 30 days"
+/>
+
+## Process
+
+Built a CLI first. `signal log "user X said Y"` from anywhere. Then a tiny web UI for browsing.
+Then a weekly digest that surfaces patterns. The order mattered — every other tool I'd seen
+started with the UI and added the capture loop later, and capture is where these tools die.
+
+## Outcome
+
+<Stat value="< 4s" label="median time from thought to logged signal" />
+<Stat value="68%" label="of signal referenced in a roadmap discussion within 30 days" />
+
+Beat the hypothesis on both metrics. The CLI is what makes it work. Browser-based capture loops
+never beat a one-line shell command.
+
+## Learnings
+
+- **Capture friction is the whole game.** Storage, browsing, search, summarization — none of it
+  matters if the capture step has any friction at all.
+- **Append-only is a feature.** Operators wanted to *not* edit past entries. Wrong-but-recorded
+  is more useful than right-but-revised.
