@@ -48,16 +48,13 @@ export const metadata: Metadata = {
 };
 
 // Synchronous theme init. Runs before paint to avoid FOUC.
-// Default is light. Dark only applies if explicitly stored.
+// Default is dark. Light only applies if explicitly stored.
 const themeInitScript = `
 (function () {
   try {
     var stored = localStorage.getItem('theme');
-    var theme = stored || 'light';
-    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
-  } catch (e) {
-    document.documentElement.setAttribute('data-theme', 'light');
-  }
+    if (stored === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  } catch (e) {}
 })();
 `;
 
