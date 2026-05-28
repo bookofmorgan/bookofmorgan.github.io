@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <pattern id="d-moxy-hmw" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.06)"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="675" fill="#111111"/>
+  <rect width="1200" height="675" fill="url(#d-moxy-hmw)"/>
+
+  <g font-family="ui-monospace, monospace" fill="#e5e5e5">
+    <text x="80" y="80" font-size="13" letter-spacing="3" fill="#5a5a5a">// HMW</text>
+
+    <text x="80" y="200" font-size="34" font-weight="500" fill="#8a8a8a">How might we</text>
+    <text x="80" y="260" font-size="42" font-weight="600">help </text>
+    <text x="195" y="260" font-size="42" font-weight="600" fill="#A3FF12">busy professionals</text>
+    <text x="80" y="320" font-size="42" font-weight="600">feel </text>
+    <text x="185" y="320" font-size="42" font-weight="600" fill="#A3FF12">more confident</text>
+    <text x="80" y="380" font-size="42" font-weight="600">about </text>
+    <text x="225" y="380" font-size="42" font-weight="600" fill="#A3FF12">job interviews</text>
+    <text x="565" y="380" font-size="42" font-weight="600" fill="#8a8a8a">?</text>
+
+    <line x1="80" y1="440" x2="1120" y2="440" stroke="#1f1f1f" stroke-width="1"/>
+
+    <g font-size="13" letter-spacing="1.5">
+      <text x="80" y="490" fill="#5a5a5a">SUBJECT</text>
+      <text x="80" y="515" fill="#e5e5e5">busy professionals (career changers)</text>
+
+      <text x="430" y="490" fill="#5a5a5a">DESIRED STATE</text>
+      <text x="430" y="515" fill="#e5e5e5">confident before, during, after</text>
+
+      <text x="800" y="490" fill="#5a5a5a">CONTEXT</text>
+      <text x="800" y="515" fill="#e5e5e5">recurring interview cycles</text>
+    </g>
+
+    <text x="80" y="620" font-size="12" fill="#5a5a5a">$ derived from 30+ user conversations across CA, UK, QA</text>
+    <text x="80" y="640" font-size="12" fill="#5a5a5a">$ became the project north star</text>
+  </g>
+</svg>

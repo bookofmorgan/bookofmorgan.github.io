@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700">
+  <defs>
+    <pattern id="d-goji-s" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.06)"/>
+    </pattern>
+    <marker id="arr-goji" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#A3FF12"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="700" fill="#111111"/>
+  <rect width="1600" height="700" fill="url(#d-goji-s)"/>
+
+  <g font-family="ui-monospace, monospace" fill="#e5e5e5">
+    <text x="80" y="60" font-size="13" letter-spacing="3" fill="#5a5a5a">// VALUE-PROP TESTING PROTOCOL · STORYBOARD METHOD</text>
+
+    <g font-size="13">
+      <text x="80" y="130" fill="#A3FF12">// frame 1</text>
+      <rect x="80" y="145" width="320" height="180" fill="#161616" stroke="#1f1f1f"/>
+      <text x="240" y="195" text-anchor="middle" font-size="14">current context</text>
+      <text x="240" y="220" text-anchor="middle" font-size="11" fill="#8a8a8a">user goes about their</text>
+      <text x="240" y="240" text-anchor="middle" font-size="11" fill="#8a8a8a">normal healthcare journey</text>
+
+      <text x="430" y="130" fill="#A3FF12">// frame 2</text>
+      <rect x="430" y="145" width="320" height="180" fill="#161616" stroke="#1f1f1f"/>
+      <text x="590" y="195" text-anchor="middle" font-size="14">the pain</text>
+      <text x="590" y="220" text-anchor="middle" font-size="11" fill="#8a8a8a">the specific breakdown</text>
+      <text x="590" y="240" text-anchor="middle" font-size="11" fill="#8a8a8a">that we want to fix</text>
+
+      <text x="780" y="130" fill="#A3FF12">// frame 3</text>
+      <rect x="780" y="145" width="320" height="180" fill="#161616" stroke="#1f1f1f"/>
+      <text x="940" y="195" text-anchor="middle" font-size="14">the system</text>
+      <text x="940" y="220" text-anchor="middle" font-size="11" fill="#8a8a8a">a conceptual solution</text>
+      <text x="940" y="240" text-anchor="middle" font-size="11" fill="#8a8a8a">in plain language</text>
+
+      <text x="1130" y="130" fill="#A3FF12">// frame 4</text>
+      <rect x="1130" y="145" width="320" height="180" fill="#161616" stroke="#A3FF12" stroke-width="1.5"/>
+      <text x="1290" y="195" text-anchor="middle" font-size="14" fill="#A3FF12">the improved state</text>
+      <text x="1290" y="220" text-anchor="middle" font-size="11" fill="#8a8a8a">what the user&apos;s life</text>
+      <text x="1290" y="240" text-anchor="middle" font-size="11" fill="#8a8a8a">looks like after</text>
+    </g>
+
+    <line x1="400" y1="235" x2="425" y2="235" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-goji)"/>
+    <line x1="750" y1="235" x2="775" y2="235" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-goji)"/>
+    <line x1="1100" y1="235" x2="1125" y2="235" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-goji)"/>
+
+    <line x1="80" y1="380" x2="1450" y2="380" stroke="#1f1f1f"/>
+
+    <g font-size="13">
+      <text x="80" y="430" fill="#A3FF12">// per session</text>
+      <text x="80" y="455" fill="#8a8a8a">$ show 3 randomised boards</text>
+      <text x="80" y="475" fill="#8a8a8a">$ ask: reaction, who is this for, would you recommend?</text>
+      <text x="80" y="495" fill="#8a8a8a">$ probe pain level</text>
+
+      <text x="700" y="430" fill="#A3FF12">// every 5 interviews</text>
+      <text x="700" y="455" fill="#8a8a8a">$ KILL  (no traction)</text>
+      <text x="700" y="475" fill="#8a8a8a">$ MODIFY  (tweak + retest)</text>
+      <text x="700" y="495" fill="#8a8a8a">$ PROMOTE  (advance to flow + landing-page test)</text>
+    </g>
+
+    <text x="80" y="600" font-size="12" fill="#5a5a5a">$ surviving value props go into the league table · winners get prototyped + risk-mapped</text>
+    <text x="80" y="620" font-size="12" fill="#5a5a5a">$ randomisation prevents anchor bias · order effect was the second-biggest signal source after pain level</text>
+  </g>
+</svg>

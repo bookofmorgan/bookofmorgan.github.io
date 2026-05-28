@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <pattern id="d-goji-y" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.06)"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="#111111"/>
+  <rect width="1200" height="800" fill="url(#d-goji-y)"/>
+
+  <g font-family="ui-monospace, monospace" fill="#e5e5e5">
+    <text x="60" y="50" font-size="13" letter-spacing="3" fill="#5a5a5a">// YGGDRASIL · TREE OF LEARNING (CONDENSED)</text>
+
+    <g>
+      <rect x="450" y="80" width="300" height="60" fill="#161616" stroke="#A3FF12" stroke-width="1.5"/>
+      <text x="600" y="115" text-anchor="middle" font-size="15" fill="#A3FF12">trunk: diabetes in egypt</text>
+    </g>
+
+    <line x1="600" y1="140" x2="240" y2="220" stroke="#A3FF12" stroke-width="1.5"/>
+    <line x1="600" y1="140" x2="600" y2="220" stroke="#A3FF12" stroke-width="1.5"/>
+    <line x1="600" y1="140" x2="960" y2="220" stroke="#A3FF12" stroke-width="1.5"/>
+
+    <g font-size="13">
+      <rect x="100" y="220" width="280" height="50" fill="#161616" stroke="#1f1f1f"/>
+      <text x="240" y="250" text-anchor="middle" fill="#A3FF12">branch · patient journey</text>
+
+      <rect x="460" y="220" width="280" height="50" fill="#161616" stroke="#1f1f1f"/>
+      <text x="600" y="250" text-anchor="middle" fill="#A3FF12">branch · clinician workflow</text>
+
+      <rect x="820" y="220" width="280" height="50" fill="#161616" stroke="#1f1f1f"/>
+      <text x="960" y="250" text-anchor="middle" fill="#A3FF12">branch · pharmacy network</text>
+    </g>
+
+    <g stroke="#1f1f1f" stroke-width="1">
+      <line x1="240" y1="270" x2="150" y2="340"/>
+      <line x1="240" y1="270" x2="240" y2="340"/>
+      <line x1="240" y1="270" x2="330" y2="340"/>
+
+      <line x1="600" y1="270" x2="510" y2="340"/>
+      <line x1="600" y1="270" x2="600" y2="340"/>
+      <line x1="600" y1="270" x2="690" y2="340"/>
+
+      <line x1="960" y1="270" x2="870" y2="340"/>
+      <line x1="960" y1="270" x2="960" y2="340"/>
+      <line x1="960" y1="270" x2="1050" y2="340"/>
+    </g>
+
+    <g font-size="11" fill="#8a8a8a">
+      <rect x="105" y="340" width="90" height="40" fill="#161616" stroke="#1f1f1f"/>
+      <text x="150" y="365" text-anchor="middle">hypothesis A</text>
+      <rect x="195" y="340" width="90" height="40" fill="#161616" stroke="#1f1f1f"/>
+      <text x="240" y="365" text-anchor="middle">hypothesis B</text>
+      <rect x="285" y="340" width="90" height="40" fill="#161616" stroke="#1f1f1f"/>
+      <text x="330" y="365" text-anchor="middle">hypothesis C</text>
+
+      <rect x="465" y="340" width="90" height="40" fill="#161616" stroke="#1f1f1f"/>
+      <text x="510" y="365" text-anchor="middle">hypothesis D</text>
+      <rect x="555" y="340" width="90" height="40" fill="#161616" stroke="#1f1f1f"/>
+      <text x="600" y="365" text-anchor="middle">hypothesis E</text>
+      <rect x="645" y="340" width="90" height="40" fill="#161616" stroke="#A3FF12" stroke-width="1.5"/>
+      <text x="690" y="365" text-anchor="middle" fill="#A3FF12">winner</text>
+
+      <rect x="825" y="340" width="90" height="40" fill="#161616" stroke="#1f1f1f"/>
+      <text x="870" y="365" text-anchor="middle">hypothesis G</text>
+      <rect x="915" y="340" width="90" height="40" fill="#161616" stroke="#A3FF12" stroke-width="1.5"/>
+      <text x="960" y="365" text-anchor="middle" fill="#A3FF12">winner</text>
+      <rect x="1005" y="340" width="90" height="40" fill="#161616" stroke="#1f1f1f"/>
+      <text x="1050" y="365" text-anchor="middle">hypothesis I</text>
+    </g>
+
+    <line x1="100" y1="430" x2="1100" y2="430" stroke="#1f1f1f"/>
+
+    <g font-size="13">
+      <text x="60" y="475" fill="#5a5a5a">// each leaf links to: miro storyboard · airtable interview log · value-prop league rank</text>
+    </g>
+
+    <g font-size="12" fill="#e5e5e5">
+      <text x="60" y="540" fill="#A3FF12">VALUE-PROP LEAGUE TABLE (top 3)</text>
+      <text x="60" y="570">01. point-of-contact screening tool for community pharmacists</text>
+      <text x="60" y="595">02. data-light patient self-monitoring with SMS handoff</text>
+      <text x="60" y="620">03. clinician-side dashboard layered on existing EHR pilots</text>
+    </g>
+
+    <text x="60" y="730" font-size="12" fill="#5a5a5a">$ 100+ interviews · 3 stakeholder groups · 3 languages</text>
+    <text x="60" y="750" font-size="12" fill="#5a5a5a">$ single source of truth for 4 designers + 3 EIRs · also doubled as the board presentation backbone</text>
+  </g>
+</svg>

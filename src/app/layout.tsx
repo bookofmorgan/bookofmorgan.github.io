@@ -22,15 +22,15 @@ const SITE_URL = "https://bookofmorgan.github.io";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Morgan Swan — process notes from zero-to-one product work",
+    default: "Morgan Swan · process notes from zero-to-one product work",
     template: "%s · Morgan Swan",
   },
   description:
-    "Portfolio and process notes from zero-to-one product work — hypotheses, canvases, and the things that shipped.",
+    "Portfolio and process notes from zero-to-one product work. Hypotheses, canvases, and the things that shipped.",
   openGraph: {
-    title: "Morgan Swan — process notes from zero-to-one product work",
+    title: "Morgan Swan · process notes from zero-to-one product work",
     description:
-      "Portfolio and process notes from zero-to-one product work — hypotheses, canvases, and the things that shipped.",
+      "Portfolio and process notes from zero-to-one product work. Hypotheses, canvases, and the things that shipped.",
     url: SITE_URL,
     siteName: "Morgan Swan",
     type: "website",

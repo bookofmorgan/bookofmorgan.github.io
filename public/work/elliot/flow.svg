@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <pattern id="d-el-flow" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.06)"/>
+    </pattern>
+    <marker id="arr-el" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#A3FF12"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="800" fill="#111111"/>
+  <rect width="1200" height="800" fill="url(#d-el-flow)"/>
+
+  <g font-family="ui-monospace, monospace" fill="#e5e5e5">
+    <text x="60" y="60" font-size="13" letter-spacing="3" fill="#5a5a5a">// ELLIOT · CONVERSATION FLOW (POST-V4)</text>
+
+    <g>
+      <rect x="450" y="100" width="300" height="60" fill="#161616" stroke="#1f1f1f"/>
+      <text x="600" y="135" text-anchor="middle" font-size="14" fill="#A3FF12">// hello (scripted)</text>
+    </g>
+    <line x1="600" y1="160" x2="600" y2="195" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-el)"/>
+
+    <g>
+      <rect x="450" y="205" width="300" height="60" fill="#161616" stroke="#1f1f1f"/>
+      <text x="600" y="240" text-anchor="middle" font-size="14" fill="#A3FF12">// branch · screener?</text>
+    </g>
+
+    <g>
+      <rect x="120" y="310" width="260" height="80" fill="#161616" stroke="#1f1f1f"/>
+      <text x="250" y="345" text-anchor="middle" font-size="14" fill="#A3FF12">// handle screener</text>
+      <text x="250" y="370" text-anchor="middle" font-size="12" fill="#8a8a8a">give reason + wait</text>
+    </g>
+
+    <g>
+      <rect x="820" y="310" width="260" height="80" fill="#161616" stroke="#1f1f1f"/>
+      <text x="950" y="345" text-anchor="middle" font-size="14" fill="#A3FF12">// proper greet</text>
+      <text x="950" y="370" text-anchor="middle" font-size="12" fill="#8a8a8a">role context + role name</text>
+    </g>
+
+    <line x1="500" y1="265" x2="290" y2="305" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-el)"/>
+    <line x1="700" y1="265" x2="900" y2="305" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-el)"/>
+
+    <text x="395" y="290" font-size="11" fill="#5a5a5a">yes</text>
+    <text x="780" y="290" font-size="11" fill="#5a5a5a">no</text>
+
+    <g>
+      <rect x="450" y="430" width="300" height="60" fill="#161616" stroke="#1f1f1f"/>
+      <text x="600" y="465" text-anchor="middle" font-size="14" fill="#A3FF12">// confirm interest + identity</text>
+    </g>
+
+    <line x1="250" y1="390" x2="500" y2="425" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-el)"/>
+    <line x1="950" y1="390" x2="700" y2="425" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-el)"/>
+
+    <line x1="600" y1="490" x2="600" y2="525" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-el)"/>
+
+    <g>
+      <rect x="450" y="535" width="300" height="60" fill="#161616" stroke="#1f1f1f"/>
+      <text x="600" y="570" text-anchor="middle" font-size="14" fill="#A3FF12">// screening Qs (role-specific)</text>
+    </g>
+
+    <line x1="600" y1="595" x2="600" y2="630" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-el)"/>
+
+    <g>
+      <rect x="450" y="640" width="300" height="80" fill="#161616" stroke="#A3FF12" stroke-width="1.5"/>
+      <text x="600" y="675" text-anchor="middle" font-size="14" fill="#A3FF12">// close · book slot · explicit confirm</text>
+      <text x="600" y="700" text-anchor="middle" font-size="12" fill="#8a8a8a">writes to DB · sends candidate confirmation</text>
+    </g>
+
+    <g font-size="11" fill="#5a5a5a">
+      <text x="60" y="500">// global · AI-identity</text>
+      <text x="60" y="520">// global · accessibility</text>
+      <text x="60" y="540">// global · objection handling</text>
+      <text x="60" y="560">// global · phishing safety</text>
+    </g>
+  </g>
+</svg>

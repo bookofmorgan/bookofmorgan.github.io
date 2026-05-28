@@ -3,7 +3,7 @@ import { WorkGrid } from "@/components/work/work-grid";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Work — Morgan Swan",
+  title: "Work",
   description: "Case studies in zero-to-one product work.",
 };
 
@@ -20,7 +20,7 @@ export default function WorkIndexPage() {
           Work
         </h1>
         <p className="font-sans text-lg text-text-dim max-w-[60ch]">
-          Case studies in zero-to-one product work — hypotheses, canvases, and
+          Case studies in zero-to-one product work. Hypotheses, canvases, and
           the things that shipped.
         </p>
       </header>

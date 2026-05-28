@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const item = getAllWork().find((w) => w.slug === slug);
   if (!item) return {};
   return {
-    title: `${item.frontmatter.title} — Morgan Swan`,
+    title: item.frontmatter.title,
     description: item.frontmatter.thesis,
   };
 }

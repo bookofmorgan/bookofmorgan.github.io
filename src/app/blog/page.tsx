@@ -4,7 +4,7 @@ import { getAllBlogPosts } from "@/lib/content";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Blog — Morgan Swan",
+  title: "Blog",
   description: "Notes and essays.",
 };
 

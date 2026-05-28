@@ -13,7 +13,7 @@ export function Footer() {
         </div>
         <div className="flex items-center gap-4">
           <a
-            href="mailto:morgan@example.com"
+            href="mailto:morganswan@outlook.com?subject=Portfolio%20contact&body=Hey%20Morgan..."
             className="hover:text-accent transition-colors"
           >
             email

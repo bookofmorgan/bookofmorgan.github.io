@@ -37,7 +37,7 @@
     color: var(--color-bg);
   }
 
-  /* Subtle dot grid background — applied to body */
+  /* Subtle dot grid background, applied to body */
   body {
     background-image: radial-gradient(
       rgba(255, 255, 255, 0.04) 1px,
@@ -77,15 +77,12 @@
     border-color: var(--color-border-bright);
   }
 
-  /* Terminal cursor block — used after a heading */
+  /* Terminal cursor underscore, used after a heading */
   .cursor-block::after {
-    content: "";
+    content: "_";
     display: inline-block;
-    width: 0.55em;
-    height: 1em;
-    background: var(--color-accent);
-    vertical-align: -0.12em;
-    margin-left: 0.18em;
+    color: var(--color-accent);
+    margin-left: 0.06em;
     animation: cursor-blink 1.1s steps(2) infinite;
   }
 
@@ -105,7 +102,7 @@
     }
   }
 
-  /* Reveal — used by GSAP ScrollTrigger */
+  /* Reveal, used by GSAP ScrollTrigger */
   .reveal {
     opacity: 0;
     transform: translateY(12px);

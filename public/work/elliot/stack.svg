@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700">
+  <defs>
+    <pattern id="d-el-stack" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="rgba(255,255,255,0.06)"/>
+    </pattern>
+    <marker id="arr-el-s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#A3FF12"/>
+    </marker>
+  </defs>
+  <rect width="1600" height="700" fill="#111111"/>
+  <rect width="1600" height="700" fill="url(#d-el-stack)"/>
+
+  <g font-family="ui-monospace, monospace" fill="#e5e5e5">
+    <text x="80" y="60" font-size="13" letter-spacing="3" fill="#5a5a5a">// ELLIOT · DEPLOYMENT STACK (TESTING ARCHITECTURE)</text>
+
+    <g>
+      <rect x="100" y="180" width="240" height="160" fill="#161616" stroke="#1f1f1f"/>
+      <text x="220" y="215" text-anchor="middle" font-size="13" fill="#5a5a5a">// candidate</text>
+      <text x="220" y="248" text-anchor="middle" font-size="18">mock job site</text>
+      <text x="220" y="275" text-anchor="middle" font-size="12" fill="#8a8a8a">React + Tailwind</text>
+      <text x="220" y="295" text-anchor="middle" font-size="12" fill="#8a8a8a">Cursor · Vercel</text>
+      <text x="220" y="320" text-anchor="middle" font-size="11" fill="#5a5a5a">submit application →</text>
+    </g>
+
+    <line x1="340" y1="260" x2="475" y2="260" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-el-s)"/>
+
+    <g>
+      <rect x="480" y="180" width="240" height="160" fill="#161616" stroke="#1f1f1f"/>
+      <text x="600" y="215" text-anchor="middle" font-size="13" fill="#5a5a5a">// candidate DB</text>
+      <text x="600" y="248" text-anchor="middle" font-size="18">Supabase</text>
+      <text x="600" y="275" text-anchor="middle" font-size="12" fill="#8a8a8a">PostgreSQL row</text>
+      <text x="600" y="295" text-anchor="middle" font-size="12" fill="#8a8a8a">name · role · phone</text>
+      <text x="600" y="320" text-anchor="middle" font-size="11" fill="#5a5a5a">webhook fires →</text>
+    </g>
+
+    <line x1="720" y1="260" x2="855" y2="260" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-el-s)"/>
+
+    <g>
+      <rect x="860" y="180" width="240" height="160" fill="#161616" stroke="#A3FF12" stroke-width="1.5"/>
+      <text x="980" y="215" text-anchor="middle" font-size="13" fill="#A3FF12">// the agent</text>
+      <text x="980" y="248" text-anchor="middle" font-size="18">Bland AI</text>
+      <text x="980" y="275" text-anchor="middle" font-size="12" fill="#8a8a8a">per-node prompts</text>
+      <text x="980" y="295" text-anchor="middle" font-size="12" fill="#8a8a8a">global context · safety</text>
+      <text x="980" y="320" text-anchor="middle" font-size="11" fill="#5a5a5a">places call →</text>
+    </g>
+
+    <line x1="1100" y1="260" x2="1235" y2="260" stroke="#A3FF12" stroke-width="2" marker-end="url(#arr-el-s)"/>
+
+    <g>
+      <rect x="1240" y="180" width="240" height="160" fill="#161616" stroke="#1f1f1f"/>
+      <text x="1360" y="215" text-anchor="middle" font-size="13" fill="#5a5a5a">// calendar</text>
+      <text x="1360" y="248" text-anchor="middle" font-size="18">mock API</text>
+      <text x="1360" y="275" text-anchor="middle" font-size="12" fill="#8a8a8a">slot lookup</text>
+      <text x="1360" y="295" text-anchor="middle" font-size="12" fill="#8a8a8a">booking confirmation</text>
+      <text x="1360" y="320" text-anchor="middle" font-size="11" fill="#5a5a5a">slot booked</text>
+    </g>
+
+    <path d="M 1360 340 C 1360 430, 600 430, 600 340" stroke="#A3FF12" stroke-width="2" fill="none" stroke-dasharray="6,6" marker-end="url(#arr-el-s)"/>
+    <text x="980" y="465" text-anchor="middle" font-size="13" fill="#5a5a5a">// write result back to candidate DB · ready for recruiter handoff</text>
+
+    <text x="80" y="630" font-size="12" fill="#5a5a5a">$ all hosted on GitHub + Vercel · zero ops · zero handholding for remote testers</text>
+  </g>
+</svg>

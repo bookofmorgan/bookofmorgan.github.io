@@ -1,0 +1,78 @@
+---
+title: Elliot
+thesis: A conversational AI screening agent that takes the first recruiter call so candidates do not drop off and recruiters get their afternoons back. Started as a personal project. Now a startup with a paying client.
+role: Product, research, build
+year: 2025
+tags: [app, code, business-model]
+featured: true
+order: 1
+---
+
+## Problem
+
+I was a candidate in a hiring process. The process kept asking me to build something. The thing it was asking me to build was itself: a tool that fixes the screening stage of recruitment.
+
+I started with the people in pain. Recruiters and hiring managers in my network. One question. "What is actually slowing your hiring down?" The answers were depressingly consistent.
+
+- Scheduling is a mess, especially across time zones
+- Candidates ghost when there is silence or lag
+- Recruitment teams are small. Their task load is not.
+
+The expensive moment is the first call. Get that call to happen reliably, on time, in a way that respects the candidate's intelligence, and the rest of the funnel survives. Miss that call and the funnel collapses.
+
+## Hypothesis
+
+<Hypothesis
+  belief="candidates will engage with a voice AI for the first recruiter call if it sounds like a person who has read their resume"
+  reason="the friction is not the call itself, it is the silence before it. A well-tuned AI removes the silence."
+  signal="candidates complete the call, accept the proposed interview slot, and rate the experience as good or great"
+/>
+
+## Process
+
+Before I touched any tools, I sketched the conversation. Not as a chatbot script. As a branching dialogue with real human reactions in the margins.
+
+Then I roleplayed it with users. That round turned up frictions I would never have written into the script:
+
+- Users apply for many jobs. They need a one-line reminder of which one this call is about.
+- Candidates are anxious for explicit confirmation of the next step. The AI has to close every loop.
+- Asking for the candidate's name first raises phishing suspicion. So I moved it later.
+
+<Canvas
+  src="/work/elliot/flow.svg"
+  caption="The conversation flow after four rounds of user testing. Every branch is a friction caught in the wild."
+  alt="Elliot conversation flow diagram"
+/>
+
+I picked Bland AI as the build platform. Bland gives you per-node prompts, loop conditions and live API integrations. Tuning an LLM for production is part engineering, part instrument-making.
+
+Sidebar on the jargon. **Prompt engineering** gets you the first good output. **Context engineering** keeps the thousandth output good. The second one is what matters for a tool people put in front of paying candidates.
+
+Each build cycle paired chat tests with live phone calls. Once the agent was reliable on my laptop, I stopped trusting my laptop. I built a fake job-application site with React, Tailwind and Supabase, hosted on Vercel. Submit the form, get a real call from Elliot, get a real calendar invite. Remote users could now test the entire experience.
+
+<Flowchart
+  src="/work/elliot/stack.svg"
+  caption="The deployment stack. The mock job site exists only to make the testing feel real to remote users."
+  alt="Elliot tech stack: React frontend, Supabase database, Bland AI agent, calendar API"
+/>
+
+Two later rounds caught the next two issues, both human before they were technical:
+
+- The agent could be tricked into claiming it was a human. I added a global node that handles AI-identity questions with empathy, honesty and a little humour.
+- Call-screening services on iOS and Android were breaking the opening. I mapped how those services work and split the greeting into two nodes so the screener can interleave a transcribed message in between.
+
+## Outcome
+
+<Stat value="60%" label="projected reduction in recruiter screening workload" />
+<Stat value="30%" label="projected reduction in candidate drop-off" />
+<Stat value="3" label="people on the team (founder, product strategist, sales)" />
+
+While testing with recruiters in my network, I spoke to the Chief of Staff of a fast-growing company who could not hire as fast as they needed to. That conversation turned into a customer. Two collaborators came on board to take the product to market. A solo learning project is now a commercial concern.
+
+Elliot lives at a public demo site with a battle-refined prompt, integrated tooling, and a database that hands warm candidates off to recruiters.
+
+## Learnings
+
+- **Build for the friction, not the demo.** The features that matter (AI-identity handling, call-screener compatibility) only showed up after live deployment. Roleplaying in a Zoom call could not have found them.
+- **The candidate is the more sensitive user, not the recruiter.** Most AI recruitment tools optimise the recruiter side. Candidates can tell. Optimising for the candidate is the moat.
+- **Customer development is the side door.** I was not selling Elliot. I was testing it. A user testing session became a sales conversation because the product was good and they had the pain.

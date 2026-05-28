@@ -11,7 +11,7 @@ export default function NotFound() {
         404
       </h1>
       <p className="font-sans text-lg text-text-dim leading-relaxed max-w-[60ch] mb-10">
-        The page you asked for doesn&apos;t exist — possibly never did,
+        The page you asked for doesn&apos;t exist. Possibly never did,
         possibly moved. Try the index.
       </p>
       <div className="flex flex-wrap gap-3 font-mono text-xs">

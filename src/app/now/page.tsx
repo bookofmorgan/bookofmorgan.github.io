@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { useMDXComponents } from "@/mdx-components";
 
 export const metadata: Metadata = {
-  title: "Now — Morgan Swan",
+  title: "Now",
   description: "What I'm currently working on.",
 };
 

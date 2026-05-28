@@ -68,12 +68,7 @@ export function HeroReveal({ totalProjects }: { totalProjects: number }) {
       >
         shipping zero-to-one{" "}
         <span className="font-mono text-text-fade">//</span>{" "}
-        hypothesis-driven product work{" "}
-        <span className="font-mono text-text-fade">//</span>{" "}
-        <span className="text-text">
-          PMF canvases, apps, code, business models
-        </span>
-        .
+        hypothesis-driven product work
       </p>
       <div className="flex flex-wrap gap-2 mt-10">
         {["pmf", "apps", "code", "business models"].map((t) => (

@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const post = getAllBlogPosts().find((p) => p.slug === slug);
   if (!post) return {};
   return {
-    title: `${post.frontmatter.title} — Morgan Swan`,
+    title: post.frontmatter.title,
     description: post.frontmatter.description,
   };
 }

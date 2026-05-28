@@ -25,7 +25,7 @@ export function BeforeAfter({
         >
           <Image
             src={src}
-            alt={`${label} — ${alt}`}
+            alt={`${label}: ${alt}`}
             fill
             sizes="(max-width: 768px) 100vw, 400px"
             className="object-cover"

@@ -12,7 +12,7 @@ export function Quote({
       </blockquote>
       {attribution && (
         <figcaption className="font-mono text-xs text-text-dim mt-4 flex items-center gap-2">
-          <span className="text-accent">—</span>
+          <span className="text-accent">·</span>
           <span>{attribution}</span>
         </figcaption>
       )}
