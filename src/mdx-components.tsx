@@ -6,6 +6,7 @@ import { BeforeAfter } from "@/components/mdx/before-after";
 import { Stat } from "@/components/mdx/stat";
 import { Quote } from "@/components/mdx/quote";
 import { Gallery } from "@/components/mdx/gallery";
+import { Details } from "@/components/mdx/details";
 
 const components: MDXComponents = {
   h1: ({ children }) => (
@@ -79,6 +80,7 @@ const components: MDXComponents = {
   Stat,
   Quote,
   Gallery,
+  Details,
 };
 
 export function useMDXComponents(): MDXComponents {

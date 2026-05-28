@@ -8,15 +8,25 @@ featured: false
 order: 3
 ---
 
+## TL;DR
+
+<Stat value="3" label="rounds of user testing" />
+<Stat value="30+" label="interviews across CA, UK, QA" />
+<Stat value="AAA" label="WCAG contrast on every color combination" />
+
+I researched, designed, prototyped, tested and re-tested an interview-prep app, then built it a brand and an atomic UI library. A coursework project that doubled as a workshop on what I am like as a solo product designer: research-loud, ideation-prolific, fast at prototyping and not precious about my own work. Also: a one-week detour into neumorphism that taught me to validate the loop on paper before drawing fancy UI.
+
+<Details summary="cat moxy/full-case-study.mdx">
+
 ## Problem
 
-The pandemic broke the way we work. The Great Resignation pushed millions back into the interview chair, and the chair had not been redesigned in twenty years.
+### Secondary research
 
-I had access to a self-selecting research panel: the BrainStation students I had been informally coaching. Talking to them surfaced one pain that was almost universal, almost untouched by existing products, and almost addressable with off-the-shelf tools. Interviews.
+The pandemic accelerated seismic shifts in the way we live and work. With "The Great Resignation" in the headlines, I researched job satisfaction levels, career changes, the shift to remote work, the economic impact of COVID, how people choose vocations, career planning, mentorship, aptitude tests. Until I got analysis paralysis.
 
-The data backed up the conversations. **39% of candidates get rejected because they do not appear confident at interview**. The average employer spends **over $4,000 per hire**. Both sides want the same thing. Neither side enjoys the process.
+My first learning on this project was to curb my passion and focus my curiosity on what specific problem I can solve, and for whom. I turned to the potential users around me to help me narrow down the scope. After listening to their experiences and concerns, one acute area stood out as almost universally painful, underserved and ripe for design intervention: **job interviews**.
 
-Existing prep tools were fragmented. A flashcard app here, a coaching service there, a YouTube channel somewhere else. Nothing put study, practice and feedback in one place.
+Further research revealed that a staggering **39% of job candidates get rejected because they do not appear confident at interview**. On the other side of the table, the average employer will spend $4,000 on the hiring process, and often much more. The paradox: although both parties want to find a match, the interview process is a nerve-wracking and unsatisfying experience for many.
 
 ## Hypothesis
 
@@ -30,17 +40,25 @@ The hard part was never the questions. The hard part was making practice feel le
 
 ## Process
 
-I interviewed users from Canada to Qatar to validate the problem. Dovetail caught the pattern: candidates were drowning in advice and starving for reps.
+### Primary research
+
+I had hit on a problem that resonated with me. It is not called designer-centered design. To validate my assumptions and proto-hypothesis, I set up calls with people from Canada to Qatar, targeting career changers and people who had recent experiences of job interviews. I also took this opportunity to learn how to use Dovetail to organize and synthesize my interview findings.
+
+The pain points I discovered included landing interviews, inconsistent role titles, curve-ball questions, mindset, practice, biases, feedback, sweaty palms, badly fitting suits and more. Again I could not target them all or solve the problem for everyone. I prioritized three areas of insight that have the potential to reinforce each other in terms of user benefit: study, practice and feedback. Then I asked myself:
 
 <Canvas
   src="/work/moxy/hmw.svg"
-  caption="The HMW question that anchored the whole project. Everything that followed answered to this sentence."
+  caption="The HMW question that anchored the project. Everything that followed answered to this sentence."
   alt="How might we help busy professionals feel more confident about job interviews?"
 />
 
-I ran an ideation workshop with my design meetup and a separate brainstorm with classmates. Four epics fell out: study common questions, get tips on structure, record yourself practicing, store recordings for review.
+### User journey
 
-The first prototype was a UI mistake. I leaned into neumorphism because it looked cool and I wanted my visual chops to keep up with my research chops. Guerrilla testing in a London pub validated the concept and gutted the UI in the same evening.
+To map out the cycle that perpetuates this issue I condensed my insights into the journey of a persona, and called her "Dolores". See what I did there?
+
+Interviewing, like public speaking, negotiation or singing for that matter, is a skill in itself, and can be considered separately to the content being communicated. As an experienced educator, I know that improving a skill requires study, practice and feedback to enable a growth mindset. Some of the best learning happens in groups, by modelling and mimicry, and when this is reinforced by constructive feedback, it builds into a loop of positive self-directed improvement.
+
+Unfortunately the interview experiences in my primary research had been far from a positive learning journey. Although capable and competent, users never felt sure what to expect and feedback was virtually non-existent.
 
 <Flowchart
   src="/work/moxy/loop.svg"
@@ -48,22 +66,93 @@ The first prototype was a UI mistake. I leaned into neumorphism because it looke
   alt="Study, practice, feedback loop diagram"
 />
 
-Three rounds of testing later, the homepage and social feed got cut. The functionality narrowed. The component library got built. The third test was clean.
+### Ideation
 
-Brand work followed. The name came from a word-association round with users. "Skills" became "moxie", trimmed to "Moxy" for the wordmark. The palette landed on blue and green for security and growth, with a yellow accent for joy and a red functional highlight for record states. Every combination passes AAA WCAG.
+I am a teamwork kind of guy, so I drafted in a few friends to ideate potential solutions. I firmly believe that many heads are better than one, and including the perspectives and expertise of others produces unexpected insights, richer ideas and better solutions.
 
-## Outcome
+I ran a brainstorming session with my classmates, and an ideation workshop with the designers at the meetup I organize. Our user stories focused around four epics:
 
-<Stat value="3" label="rounds of user testing" />
-<Stat value="AAA" label="WCAG contrast on every color combination" />
-<Stat value="1" label="atomic UI library handed off for future devs" />
+- knowing what questions commonly come up
+- getting tips on structure and model responses
+- recording oneself practicing interview answers
+- storing those recordings, for review or feedback from others
 
-Moxy was a coursework project. No live metrics, by design.
+That night I was excitedly sketching user flows and exploring screen designs on the metro home.
 
-What the project gave me was a workflow. I now know what I am like as a solo UX lead: research-loud, ideation-prolific, fast at prototyping, slow to be precious about my own work. I also know where my edges are. Secondary research creep almost killed the project in the first week. I now ringfence it.
+### Prototyping, testing and iterating
 
-## Learnings
+Only a few weeks into the course, I did not feel overly sure of my visual design skills. I made the rookie mistake of jumping into neumorphism for UI inspirations, hoping its cool factor would boost my credibility.
 
+It is safe to say that Londoners relaxing in a pub on a quiet Sunday night were not expecting an excited designer to test an app on them. The users I interviewed thoroughly validated the concept. They also called out problems with the UI, because in my neumorphic experiments I had deviated from good UI patterns and heuristics in favor of appearance and "cool factor".
+
+I prioritized my test findings on an impact-effort matrix, then implemented the ones that would bring the most benefit to the user. The next testing round showed that the usability issues had been resolved but the role of the homepage, social feed and ratings was not intuitive.
+
+It was clear what had to be done: a redesign by subtraction, of both the functionality and the UI. I created a new inspiration board that reflected a cleaner, minimal feel, having learned to be more confident and methodical in translating my aesthetic preferences into my designs. The simpler UI patterns were designed to contain more reusable components, which would make creating an atomic library, as well as the hypothetical development of the app, much easier.
+
+I refocused on the core functionality and value. Referencing fitness and habit-tracking apps, I reimagined the homepage and de-emphasised the importance of social features, restricting them to video comments. **The third set of user tests was a resounding success.**
+
+### Under the hood
+
+I knew that a design system and a UI library are the foundation of efficient product development, but creating my first atomic library seemed like a daunting and labour-intensive task. I asked myself "how might I make redlining feel more exciting and relevant?" and the answer became obvious: use green lines. Just kidding.
+
+I talked to the developers on the parallel cohort, getting more insight into their process, and how well-thought-out components and patterns made their work much easier. Connecting my work to the broader product lifecycle motivated me, and added to my understanding of cross-functional teamwork, setting me up well for the hackathon ahead. There are no situations that cannot benefit from more empathy and design thinking.
+
+## Brand
+
+### Attributes
+
+I began by mapping out the feelings and attributes that synergize with the core value proposition of my product. To help my persona with interview preparation, I created a list of attributes that were opposite to the frustrations in their journey. The "more A than B" technique allowed me to hone in on the qualities I want the brand, color palette, iconography, typography and overall user experience to convey.
+
+### Mood and colour
+
+Translating the brand attributes into images gave me a basis for creating a visual identity that ties together the values and aspirations of the brand across the design, and supports both functionality and delight in the user experience.
+
+The final choice of colours focused on blue and green hues, to convey an ambience of security, stability, growth and perhaps even money. Accenting these shades is a golden yellow, tinged with orange, suggesting joy, excitement, adventure and again, perhaps even precious metals. Finally a necessity for a functional highlight emerged during colour injection, to be used in icons such as "record" and "stop", which the user is accustomed to seeing in hues of red.
+
+All three main permutations of the neutral, primary and accent colours meet AAA WCAG standards when used to display text and icons. This means that as many users as possible, including those affected by visual impairments, will see the text in high contrast and be able to navigate and consume the information they need.
+
+### Name
+
+I wanted to explore conceptual associations around job interviews, so I went back to my users and played a few rounds of word association. Pattern emerged out of the resulting word cloud, and led me first towards careers and conversations: career cafe. Despite the pleasing phonics and alliteration, I wanted a compact wordmark so pivoted into fewer syllables.
+
+Thinking of skills (which are both what interviews are about and how the product frames interviewing itself) led me to surface an old-fashioned term that perfectly encompasses the brand values of energy, determination, courage and know-how: **moxie**.
+
+Given its ambiguous phonemics, I asked several potential users, particularly non-native English speakers, how they would spell the word. The results varied, and led me to adopt a simplified four-letter spelling that also fits in with tech naming trends: **Moxy**.
+
+### Logo and wordmark
+
+At first, the triangular letterforms in MOXY suggested arrows and upward motions. However, the angular forms are at odds with the calm and flowing brand attributes. I wanted to infuse these attributes into all aspects of the user experience, so I explored cursive scripts that suggest fluid and elegant motion, along with pedigree. The stroke of the lower case "m" also evokes the curve of a "squiggly" career.
+
+The wordmark can be a powerful and recognisable symbol for the brand. Like the other assets, it was important to me to harmonise the design of the wordmark with the brand attributes. I explored several display and cursive fonts and compiled a font moodboard to get a sense of how they feel alongside the brand moodboard imagery.
+
+A final but critical consideration is how visible, legible and accessible the wordmark is under different conditions, for example in various colour combinations, from a distance, or as a neon sign. Most of the fonts were discarded based on this final criterion, and in the end I settled on Playball.
+
+I designed the wordmark by shaving the first downstroke of the "m" to bring it in line with the look of the logo. I then removed the linking loop of the "o" to take attention away from it, and simplified its link to the "x". Finally, I brought all the letters closer together to give a cozier, friendlier feel. I experimented with removing the serifs of the "y", but decided to keep them as they hinted at upward motion, and the strokes looked too sharp without them.
+
+## Product
+
+### Get some Moxy
+
+Moxy is a mobile app that allows users to study, practice and get feedback on interview techniques and answers. At its core lies a database of interview questions, organised by industry and position. Each question is rated by how frequently it comes up in interviews, based on user feedback.
+
+Users will choose the industry they are interested in during onboarding. The search functionality assumes no pre-existing knowledge of the field and allows the user to browse common job titles and the possible interview questions associated with them.
+
+Selecting a question gives access to curated model answers and technique tips, including transcripts for situations when reading is preferable. The user can also see answers published by other peers, encouraging feedback and horizontal mentoring.
+
+All questions and videos can be bookmarked and reviewed in a separate section of the app. The bookmarked questions can then be treated as a playlist for the practice sessions, alongside question lists curated by job title. Once recorded, the user can choose to save the video to their device or publish them to the community to receive feedback from others.
+
+### Marketing and next steps
+
+I created a responsive marketing website mockup that fits into the branding and tone of the app, tackling acute pains in a user's career with simplicity, softness and a degree of playfulness. Having been inspired by my research since the project's completion, I am considering iterating on the landing page and a live launch to validate the idea on real users. In the time of the Great Resignation, from a product perspective the timing could be perfect to further research, develop and launch a suite of tools that help people make sense of the changing world of work.
+
+## Outcomes and learnings
+
+This was a coursework project, so there are no longitudinal product metrics like traffic, downloads or MAUs. The main learnings:
+
+- I am a champion of user research, prolific in ideation, fast in prototyping and not attached to outcomes.
+- The areas I need to work on: controlling creep in secondary research, and improving my systems for synthesizing interview findings.
 - **The interesting question is the second one.** "Why are interviews hard?" is generic. "What is the loop that would make practicing them not feel like homework?" is the one that produced the product.
 - **Test before you draw the fancy UI.** Neumorphism cost me a week. Validating the loop on paper would have given me the same insight for nothing.
 - **Brand attributes ladder up.** Once "calm, fluid, courageous" was the brief, every typeface, color and curve had a yes/no test. Most decisions stopped being decisions.
+
+</Details>

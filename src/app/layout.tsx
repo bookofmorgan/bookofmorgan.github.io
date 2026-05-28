@@ -47,15 +47,17 @@ export const metadata: Metadata = {
   },
 };
 
-// Synchronous theme init. Runs before paint to avoid FOUC. Reads stored
-// preference, falls back to system preference, applies data-theme on <html>.
+// Synchronous theme init. Runs before paint to avoid FOUC.
+// Default is light. Dark only applies if explicitly stored.
 const themeInitScript = `
 (function () {
   try {
     var stored = localStorage.getItem('theme');
-    var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    var theme = stored || 'light';
     if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
-  } catch (e) {}
+  } catch (e) {
+    document.documentElement.setAttribute('data-theme', 'light');
+  }
 })();
 `;
 

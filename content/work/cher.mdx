@@ -8,17 +8,35 @@ featured: false
 order: 4
 ---
 
+## TL;DR
+
+<Stat value="24h" label="from sealed brief to coded prototype and pitch" />
+<Stat value="1 in 3" label="women said they would not share a car with a man after dark" />
+<Stat value="1" label="offer of investment from a fellow bar patron during testing" />
+
+Cross-functional team hackathon. Two designers, two engineers. Prepped the team and the tools two days before the brief was even revealed, which bought back six hours on the day. Ran primary research before sketching when every other team did secondary, and the difference showed up in the pitch. Picked up an investment offer in the testing round from someone at the next table.
+
+<Details summary="cat cher/full-case-study.mdx">
+
+## Prologue
+
+### 5 P's: prior preparation prevents poor performance
+
+I was fired up about the BrainStation hackathon for weeks. The pace, energy, new connections and sense of achievement at these events are hard to beat, especially in person. The specific problem space of the hackathon was a closely guarded secret, but that did not mean there was nothing we could do to prepare for the challenges to come.
+
+Once the teams were chosen, my top priority was getting the designers and developers on the same page about what they do and how they do it, and in particular bringing the devs into our design processes.
+
+To anticipate and streamline the intense work ahead I created a Notion workspace. The team then collaborated on a ticketing system for developer handoff, set up through a combination of a segmented Figma canvas and the built-in commenting feature.
+
 ## Problem
 
-The brief was a sealed envelope. The teams were assembled days in advance. I had four people: two designers, two engineers. I had 24 hours from envelope to demo.
+### Problem space: sharing is caring
 
-So I prepped the only thing I could prep. The team.
+When the problem space was revealed, we focused on secondary research to find the biggest players and factors in this hot topic.
 
-I ran two alignment sessions before the hackathon. We mapped capabilities and assumptions. We set up a shared Notion workspace and built a Figma-native ticketing system so designer-to-developer handoff would not eat the clock on the day.
+We were shocked to unearth that **nearly half of transportation pollution is caused by people driving cars on their own**. Not for the first time I wondered why we continue to design and build four and five-plus seater wagons as standard, when most people drive solo. While redesigning how our culture thinks of personal vehicles altogether would be a worthwhile ambition, we were mindful of our limitations and expected deliverables.
 
-Envelope opened. Topic: ride sharing.
-
-Secondary research turned up the live wire. **Almost half of all transport pollution comes from people driving alone.** Cars built for five carry one. Ride sharing changes the math, but only if people will actually share. Existing players had solved strangers-in-cars for taxi rides. Nobody had solved it for peer ride sharing where the driver and passengers are both civilians.
+Household names in ride sharing have made getting into a car with a stranger a common transaction, but could we go further? This was an opportunity to discover how people feel about sharing cars and what we can do to improve their user journey, while reducing the impact on the environment.
 
 ## Hypothesis
 
@@ -30,11 +48,27 @@ Secondary research turned up the live wire. **Almost half of all transport pollu
 
 ## Process
 
-User interviews in a Hoxton hotel bar. Yes, the hotel bar. Two designers, one Marvel POP prototype, and several Londoners patient enough to sit through us.
+### User interviews: an unexpected journey
 
-The findings clustered three ways. Small talk with strangers is awkward. Online trust signals work but only when they are specific. And, most acutely, **1 in 3 women said they would not feel comfortable sharing a car with a man, especially after a night out**.
+No matter the time constraints, design without primary research is not design. Users know more about the solution than we do.
 
-Persona work in this kind of timeframe is a stick. We used it to keep us on track when caffeine started losing.
+Our insights fell into three broad categories:
+
+- **Small talk with strangers is awkward.** We seem to have collectively learned to airbrush taxi drivers out, and look anywhere but at our fellow public transport passengers. Sharing a car, especially with multiple passengers, would require some ice breaking.
+- **It would also require trust.** Online transactions with strangers based on how other strangers felt about them have become the norm, while the perceived risk of hitchhiking and couchsurfing has increased.
+- **The pain point that struck us most, however, was that women did not feel comfortable sharing cars with men.** When women's voices are growing stronger but harassment continues to be a problem, we saw an opportunity to achieve two complimentary goals.
+
+The HMW that emerged:
+
+> "How might we make the environmental impact of car sharing more appealing and safer for women?"
+
+### The who
+
+To counteract bias, keep us focused on the user needs and "rubber duck" us through any design bottlenecks, we created a persona. A young woman, regularly working late and going out in London. She would love to reduce her carbon footprint and taxi bills, but is concerned about the lottery of finding someone to share with and finds men in London "very confident" (actual user quote). As a user she was focused on three core needs:
+
+1. match with other women
+2. know what she has in common with them
+3. choose who to share with based on user ratings
 
 <Canvas
   src="/work/cher/persona.svg"
@@ -42,9 +76,23 @@ Persona work in this kind of timeframe is a stick. We used it to keep us on trac
   alt="Persona card for the Cher app primary user"
 />
 
-Ideation: competitor research, burgers, Crazy 8s. We sketched everything from wireless proximity matching to wearables with light messaging, then cut down to what we could ship: a mobile app with profiles, search and messaging.
+### Ideation: fast and furious
 
-Solution sketching stayed deliberately clean. A minimal UI cut development time and gave the engineers reusable components from the first hour. They started coding while the designers refined the brand.
+The hour was getting late, and we needed nourishment. We holed up in a hotel bar in Hoxton and embarked on a round of competitor research, burgers and Crazy 8s, focusing on how we can connect passengers for regular or ad-hoc carshares. With creative juices flowing, we came up with ideas ranging from wireless proximity scans to messages in lights on wearables.
+
+Our brief was to deliver a coded prototype and presentation by 1600 the next day, and keeping the constraints of our development team in mind, we narrowed our scope to a mobile app with profile, search and messaging functionality.
+
+### Solution sketching: keep it simple
+
+Clean and minimal UI would not only provide the user with a heuristically pleasing and uncluttered experience, but allowed us to create a lean template with reusable components, streamlining both the design and development process.
+
+We remixed inspirations and UI patterns of the core functionality and rapidly moved to the first sketches of our proposed solution.
+
+### Testing
+
+It is imperative to put the proposed designs in the hands of the user as early and often as possible, so using the Marvel POP app, I mocked up a prototype and spoke to women from all walks of life right there in the hotel bar.
+
+The results: **1 offer of investment, 1 offer of a date, and 1 in 3 users confirming that they would in fact feel uncomfortable sharing a car with a man**, especially after an evening out. We had the first signs of product-market fit.
 
 <Flowchart
   src="/work/cher/timeline.svg"
@@ -52,20 +100,30 @@ Solution sketching stayed deliberately clean. A minimal UI cut development time 
   alt="Cher hackathon 24-hour timeline"
 />
 
-The brand came out of the work. **Cher** is "share" with the phonetics tilted, "a Car for HER", and a wink at the pop icon. The logo fuses two ancient Greek Venus symbols into a smiling face that doubles as a route between two points. The colour palette tested against WCAG.
+### Branding
 
-Final hours: pitch deck, narrative arc, presentation rehearsal. Handoff was clean because we had set up the ticket pipeline two days earlier.
+By this stage, our dev team was busy creating the core components, while we set about refining the visual design. The colour palette was extracted from a moodboard that evoked rest, calm and security. We made sure all the colour combinations met the WCAG accessibility standards.
+
+With further refinements, and several missed tube trains, I perfected the graphic elements and cut down one screen, while my colleague redlined the components, ready for developer handoff.
+
+**The brand name was a stroke of inspiration that combines the phonetics of "share" with the wordplay of "a Car for HER" and an association with a female pop icon.** Iconography also influenced the logo design, fusing two ancient Greek symbols for Venus, to represent connecting women, while simultaneously hinting at a smiling, winking face, an origin and a destination, and even a car, if the logo is inverted.
+
+### Handoff and pitch
+
+Having maintained constant communication with the dev team, our design was informed by their input throughout, and handoff was seamless. The design team even got to write the JSON file for the user database. Finally we built a narrative and delivered an outstanding presentation, highlighting the problem space, design process and user feedback.
 
 ## Outcome
 
-<Stat value="1 in 3" label="women said they would not share a car with a man after dark" />
-<Stat value="1" label="offer of investment from a fellow bar patron during testing" />
-<Stat value="24h" label="from sealed brief to coded prototype and presentation" />
+We shipped the coded prototype and the pitch deck on time. We did not win the hackathon. We were however the only team that ran primary research before sketching, and the investment offer came from a person at the next table in the hotel bar who had watched us test for an hour and asked who we were.
 
-We pitched. We did not win the hackathon. We were, however, the only team that ran primary research before sketching. The investment offer came from a person at the next table in the hotel bar who had watched us test for an hour and asked who we were.
+Had there been more time, the first priority would have been user testing, and more user testing, to refine the functionality and define the metrics to measure and improve product-market fit. A landing page and a small targeted advertising campaign would show potential market appetite and a rough cost of user acquisition, allowing us to consider various business models, as a standalone product or an addition to an existing digital solution.
+
+With driverless taxis just around the corner, and an increasing appetite for human connection, the timing could be right for a more community-based approach to sharing cars to help the planet.
 
 ## Learnings
 
 - **Prepare what you can prepare.** The envelope was sealed but the team was not. Two alignment sessions before the hackathon bought us six hours on the day.
 - **Constraints make the brand.** I would never have arrived at "Cher" without the time pressure. The associative jump from "share" to "for her" to "Cher" was a 90-second whiteboard riff.
 - **Primary research compounds.** Every team in the room did secondary research. We were the only team that talked to users. That single decision was worth a whole production day.
+
+</Details>

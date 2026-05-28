@@ -8,35 +8,63 @@ featured: true
 order: 1
 ---
 
+## TL;DR
+
+<Stat value="60%" label="projected reduction in recruiter screening workload" />
+<Stat value="30%" label="projected reduction in candidate drop-off" />
+<Stat value="2" label="people on the team (founder + commercial)" />
+
+I researched, designed, built and deployed a conversational AI agent that reduces candidate ghosting and drop-off in recruitment. Along the way I learned context engineering, API orchestration and JavaScript integrations, and turned a learning project into a product with paying customers and a fledgling team. A user-testing conversation with a Chief of Staff turned into the first sale.
+
+<Details summary="cat elliot/full-case-study.mdx">
+
 ## Problem
 
-I was a candidate in a hiring process. The process kept asking me to build something. The thing it was asking me to build was itself: a tool that fixes the screening stage of recruitment.
+Recruitment often breaks down at the very first touchpoint: candidate screening. I experienced this while navigating a job application process where I was asked to build a solution for this very pain. Elliot began as an initiative to reimagine how companies screen talent, especially in high-volume or specialised hiring contexts, using conversational AI to deliver a more human, responsive and joined-up brand impression.
 
-I started with the people in pain. Recruiters and hiring managers in my network. One question. "What is actually slowing your hiring down?" The answers were depressingly consistent.
+### Starting with people, not prompts
+
+Before designing anything, I started where the real problems live: in the day-to-day reality of recruiters and hiring managers. I reached out to people in my network and asked a simple question:
+
+> "What is actually slowing down your hiring process?"
+
+I wanted firsthand frustration. What I uncovered was not surprising. It was very human:
 
 - Scheduling is a mess, especially across time zones
-- Candidates ghost when there is silence or lag
-- Recruitment teams are small. Their task load is not.
+- Candidates drop off when there is silence or lag
+- Recruitment teams are small, but their task load is massive
 
-The expensive moment is the first call. Get that call to happen reliably, on time, in a way that respects the candidate's intelligence, and the rest of the funnel survives. Miss that call and the funnel collapses.
+Delays caused by scheduling ping-pong, timezone mismatches or lack of recruiter bandwidth are costing companies great candidates. This validated the opportunity for intervention and became the foundation of an AI voice agent designed to speed up early-stage candidate screening.
+
+The HMW that emerged:
+
+> "How might we make recruitment feel joined up and personal, using AI in a way that feels natural?"
 
 ## Hypothesis
 
 <Hypothesis
   belief="candidates will engage with a voice AI for the first recruiter call if it sounds like a person who has read their resume"
   reason="the friction is not the call itself, it is the silence before it. A well-tuned AI removes the silence."
-  signal="candidates complete the call, accept the proposed interview slot, and rate the experience as good or great"
+  signal="candidates complete the call, accept the proposed interview slot and rate the experience as good or great"
 />
 
 ## Process
 
-Before I touched any tools, I sketched the conversation. Not as a chatbot script. As a branching dialogue with real human reactions in the margins.
+### Designing conversations that do not feel robotic
 
-Then I roleplayed it with users. That round turned up frictions I would never have written into the script:
+Once I understood the stakes, I turned to the brief. Before touching any tools, I sketched out the conversation flow. Not as a chatbot script, but as an exploration of organically branching human dialogue. Talking to myself would only get me so far however. To really explore where this conversation could go, I had to get out of the room and get out of my own head.
 
-- Users apply for many jobs. They need a one-line reminder of which one this call is about.
-- Candidates are anxious for explicit confirmation of the next step. The AI has to close every loop.
-- Asking for the candidate's name first raises phishing suspicion. So I moved it later.
+I roleplayed the conversation with real users and unsurprisingly discovered a lot of frictions and deviations I had not thought of myself. No amount of whiteboarding beats user testing.
+
+Key insights across testing rounds:
+
+**Round 1.** Users apply for a lot of jobs. Add a summary reminder at the start of the call. The AI may catch them at a time they are not available. Candidates are anxious for an explicit confirmation of the next interview.
+
+**Round 2.** Asking for the name first raises phishing suspicions. Confident candidates may lead the conversation. The AI has to stay on target.
+
+**Round 3.** Candidates may have accessibility requirements. Some users may be curious or put off by talking to an AI.
+
+Each iteration added emotional intelligence to the interaction. This still was not about building an AI. I was creating a blueprint for the real human experience in this context.
 
 <Canvas
   src="/work/elliot/flow.svg"
@@ -44,11 +72,31 @@ Then I roleplayed it with users. That round turned up frictions I would never ha
   alt="Elliot conversation flow diagram"
 />
 
-I picked Bland AI as the build platform. Bland gives you per-node prompts, loop conditions and live API integrations. Tuning an LLM for production is part engineering, part instrument-making.
+### How to train your drAIgon
 
-Sidebar on the jargon. **Prompt engineering** gets you the first good output. **Context engineering** keeps the thousandth output good. The second one is what matters for a tool people put in front of paying candidates.
+I chose the Bland AI developer platform to translate the prototype schema into a working conversational AI. Bland offers deep engineering and customisation options. Individual prompt engineering, loop conditions and API integrations in every node, alongside system-wide context engineering.
 
-Each build cycle paired chat tests with live phone calls. Once the agent was reliable on my laptop, I stopped trusting my laptop. I built a fake job-application site with React, Tailwind and Supabase, hosted on Vercel. Submit the form, get a real call from Elliot, get a real calendar invite. Remote users could now test the entire experience.
+> Sidebar on the jargon. **Prompt engineering** gets you the first good output. **Context engineering** keeps the thousandth output good.
+
+The guiding principle in designing this AI was to make it sound as natural as possible. I dove deep into Bland's documentation and studied numerous conversation bots in their developer library to learn what works and what does not. LLM outputs can be unpredictable and tuning them is as much art as engineering. For business applications, I needed to create a tool that was consistently reliable and safe.
+
+Each build of the agent was constantly tested using both a chat interface and simulated phone calls. This allowed me to pinpoint decisions and expressions the AI produced and refine it using reinforcement. As the agent reached higher levels of accuracy and fluency, I reminded myself once again that testing it within the confines of my expectations was not enough. I had to release it into the wild, albeit on a short leash.
+
+### Beyond the prototype
+
+I could test the prototype face to face with users on my laptop, editing the key parts of the conversation with details like their name to make it feel personalised to them. However, this struck me as both inelegant and limiting. How could I adapt this for remote testing? How could I make it actually personalised?
+
+I challenged myself to build a simulation of the entire user experience:
+
+- a simple website to simulate submitting a job application
+- a database to store the candidate details
+- scripting to initiate an AI call to the candidate
+- extraction of variables from the database to secure and personalise the call
+- integrating a calendar API to simulate booking the next meeting
+
+I built the solution using React, Tailwind and JS using Cursor for the front end and a Supabase PostgreSQL database. Hosted in GitHub and deployed using Vercel. This allowed me to test the solution with remote users, with no additional setup or guidance.
+
+I used a mock calendar API to simulate booking a follow-on interview. While the API provided numerical responses for errors, on successful booking it supplied a string as a response. To overcome this limitation, I structured the node to extract a variable from the response, which could then be used in a boolean condition to give an accurate, albeit still simulated, direction for the conversation to go.
 
 <Flowchart
   src="/work/elliot/stack.svg"
@@ -56,23 +104,30 @@ Each build cycle paired chat tests with live phone calls. Once the agent was rel
   alt="Elliot tech stack: React frontend, Supabase database, Bland AI agent, calendar API"
 />
 
-Two later rounds caught the next two issues, both human before they were technical:
+This setup allowed me to run remote user testing that perfectly reflected real-world use, not only in the design of the agent but its integration and deployment into client databases, tools and interfaces. The value of this testing round became immediately obvious.
 
-- The agent could be tricked into claiming it was a human. I added a global node that handles AI-identity questions with empathy, honesty and a little humour.
-- Call-screening services on iOS and Android were breaking the opening. I mapped how those services work and split the greeting into two nodes so the screener can interleave a transcribed message in between.
+**Round 4.** The agent can claim to be human, compromising user trust and safety. Call-screening services confuse and break the conversation flow.
+
+To tackle the first challenge, I added a global node that would automatically handle AI queries with empathy, humour and honesty, as well as additional guard rails in the node prompts and global context to ensure that the agent did not mislead the user.
+
+Working with call-screening services would prove more challenging, especially as neither the iOS nor Android feature was available on my personal devices. I found recordings of the call-screening services in action which revealed how they worked:
+
+1. Ask the caller's name and reason for calling
+2. Transcribe the response as a message to the recipient
+3. Wait for recipient to take over the call
+
+The challenge was primarily human, then technical. By mapping out the caller journey I was able to design a naturalistic conversational experience that accounts for a scripted third speaker at the outset of the call. After experimenting with various in-platform tools, the best outcome was achieved by breaking up the initial greeting into two nodes: a quick scripted "hello" followed by another node to properly greet the user. This allowed the space for a special screening handler to kick in between the two if the agent heard the scripted message, at which point it was instructed to give a succinct reason for the call and wait.
 
 ## Outcome
 
-<Stat value="60%" label="projected reduction in recruiter screening workload" />
-<Stat value="30%" label="projected reduction in candidate drop-off" />
-<Stat value="2" label="people on the team (founder + commercial)" />
+While testing with recruiters in my network, I spoke to the Chief of Staff of a fast-growing company who needed to hire faster than their HR team could handle. Inadvertently I found my first client. Customer development at its finest.
 
-While testing with recruiters in my network, I spoke to the Chief of Staff of a fast-growing company who could not hire as fast as they needed to. That conversation turned into a customer. One collaborator came on board to handle the commercial side. A solo learning project is now a two-person startup.
-
-Elliot lives at a public demo site with a battle-refined prompt, integrated tooling, and a database that hands warm candidates off to recruiters.
+Elliot now lives as a functional AI screening agent demo on a dedicated site, with a battle-refined prompt and context engineering, built-in objection handling, live API integrations and a database for recruiter handoff. I led the product from insight to working MVP, facilitating research, building credibility with real users and designing the roadmap for what is next. A concept that began as a response to personal pain has evolved into a viable product with commercial potential and a team behind it.
 
 ## Learnings
 
 - **Build for the friction, not the demo.** The features that matter (AI-identity handling, call-screener compatibility) only showed up after live deployment. Roleplaying in a Zoom call could not have found them.
 - **The candidate is the more sensitive user, not the recruiter.** Most AI recruitment tools optimise the recruiter side. Candidates can tell. Optimising for the candidate is the moat.
 - **Customer development is the side door.** I was not selling Elliot. I was testing it. A user testing session became a sales conversation because the product was good and they had the pain.
+
+</Details>
