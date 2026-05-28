@@ -1,42 +1,8 @@
-"use client";
-
-import { useEffect } from "react";
-import Lenis from "lenis";
-
+// Lenis smooth scroll was here. It conflicted with image-bearing pages
+// (case study Canvas/Flowchart components) where trackpad wheel events
+// stopped propagating once the first image loaded. Native scroll handles
+// this correctly. Keeping the file as a pass-through so callers do not
+// need to be touched; remove when convenient.
 export function LenisProvider({ children }: { children: React.ReactNode }) {
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)",
-    ).matches;
-
-    if (prefersReducedMotion) return;
-
-    // Disable smooth scroll on touch devices by default
-    const isTouch =
-      "ontouchstart" in window || navigator.maxTouchPoints > 0;
-    if (isTouch) return;
-
-    const lenis = new Lenis({
-      duration: 1.0,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      wheelMultiplier: 0.9,
-      smoothWheel: true,
-    });
-
-    let rafId: number;
-    function raf(time: number) {
-      lenis.raf(time);
-      rafId = requestAnimationFrame(raf);
-    }
-    rafId = requestAnimationFrame(raf);
-
-    return () => {
-      cancelAnimationFrame(rafId);
-      lenis.destroy();
-    };
-  }, []);
-
   return <>{children}</>;
 }
