@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bookofmorgan.github.io/sitemap.xml

@@ -96,8 +96,7 @@ export function getFeaturedWork(): WorkItem[] {
   return getAllWork().filter((item) => item.frontmatter.featured);
 }
 
-export function getAllBlogPosts(): BlogItem[] {
-  const isProd = process.env.NODE_ENV === "production";
+function readAllBlogPostsRaw(): BlogItem[] {
   return readMdxFiles("blog")
     .map(({ slug, raw, full }) => {
       const { data } = matter(raw);
@@ -108,12 +107,25 @@ export function getAllBlogPosts(): BlogItem[] {
       }
       return { slug, frontmatter: parsed.data };
     })
-    .filter((item) => !isProd || !item.frontmatter.draft)
     .sort(
       (a, b) =>
         new Date(b.frontmatter.publishedAt).getTime() -
         new Date(a.frontmatter.publishedAt).getTime(),
     );
+}
+
+export function getAllBlogPosts(): BlogItem[] {
+  const isProd = process.env.NODE_ENV === "production";
+  return readAllBlogPostsRaw().filter(
+    (item) => !isProd || !item.frontmatter.draft,
+  );
+}
+
+// Used by generateStaticParams under `output: "export"`, which requires at
+// least one param. Returns every slug on disk; the page component still calls
+// notFound() for drafts in production so they 404 on direct visit.
+export function getAllBlogSlugsForBuild(): string[] {
+  return readAllBlogPostsRaw().map((p) => p.slug);
 }
 
 export function blogIsEnabled(): boolean {

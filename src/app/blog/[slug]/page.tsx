@@ -1,11 +1,13 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { getAllBlogPosts } from "@/lib/content";
+import { getAllBlogPosts, getAllBlogSlugsForBuild } from "@/lib/content";
 import { useMDXComponents } from "@/mdx-components";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
-  return getAllBlogPosts().map((p) => ({ slug: p.slug }));
+  // Include drafts at build time so static export has at least one slug;
+  // drafts call notFound() at render time and get the 404 page.
+  return getAllBlogSlugsForBuild().map((slug) => ({ slug }));
 }
 
 export const dynamicParams = false;
