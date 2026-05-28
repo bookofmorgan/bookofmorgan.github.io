@@ -135,17 +135,21 @@ html[data-theme="light"] {
 
   /* Terminal cursor underscore, used after a heading.
      Uses --color-cursor (defaulted to accent) so light mode can override
-     with a brighter green that reads as 'alive' against the cream paper. */
+     with a brighter green that reads as 'alive' against the cream paper.
+     Holds on/off states briefly then fades between them — softer than
+     the classic steps(2) binary blink. */
   .cursor-block::after {
     content: "_";
     display: inline-block;
     color: var(--color-cursor, var(--color-accent));
     margin-left: 0.06em;
-    animation: cursor-blink 1.1s steps(2) infinite;
+    animation: cursor-blink 1.2s ease-in-out infinite;
   }
 
   @keyframes cursor-blink {
-    50% { opacity: 0; }
+    0%, 40%   { opacity: 1; }
+    50%, 90%  { opacity: 0; }
+    100%      { opacity: 1; }
   }
 
   /* Reduced motion: kill the cursor blink */
