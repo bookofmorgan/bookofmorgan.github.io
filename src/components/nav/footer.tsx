@@ -1,5 +1,3 @@
-import { ThemeToggle } from "@/components/nav/theme-toggle";
-
 export function Footer() {
   return (
     <footer className="border-t border-border mt-32">
@@ -39,7 +37,6 @@ export function Footer() {
           >
             x
           </a>
-          <ThemeToggle />
         </div>
       </div>
     </footer>
