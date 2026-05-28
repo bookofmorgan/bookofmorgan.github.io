@@ -20,7 +20,7 @@ export function FeaturedWork({ items }: { items: WorkItem[] }) {
           <Reveal as="div" key={item.slug} delay={idx * 0.08}>
             <Link
               href={`/work/${item.slug}`}
-              className="group block border border-border bg-bg-elev hover:border-accent/50 transition-colors"
+              className="group block border border-border bg-bg-elev hover:border-accent/50 hover:-translate-y-0.5 transition-[border-color,transform] duration-200 will-change-transform"
             >
               <div className="border-b border-border px-4 py-2 flex items-center gap-2 font-mono text-[11px] text-text-dim">
                 <div className="flex gap-1">

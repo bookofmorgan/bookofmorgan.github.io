@@ -1,7 +1,6 @@
 "use client";
 
 import { createElement, useEffect, useRef } from "react";
-import { getGsap, prefersReducedMotion } from "@/lib/gsap";
 
 type Tag = "div" | "section" | "article" | "header" | "h1" | "h2" | "h3" | "p";
 
@@ -9,17 +8,16 @@ interface RevealProps {
   children: React.ReactNode;
   className?: string;
   delay?: number;
-  y?: number;
-  duration?: number;
   as?: Tag;
 }
 
+// CSS + IntersectionObserver scroll reveal. Off-main-thread once the
+// .is-visible class is added. Replaces the older GSAP ScrollTrigger
+// implementation, which was ~700ms and pulled GSAP into every page.
 export function Reveal({
   children,
-  className,
+  className = "",
   delay = 0,
-  y = 16,
-  duration = 0.7,
   as = "div",
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
@@ -27,30 +25,33 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    if (prefersReducedMotion()) return;
 
-    const { gsap, ScrollTrigger } = getGsap();
-    const ctx = gsap.context(() => {
-      gsap.set(el, { opacity: 0, y });
-      gsap.to(el, {
-        opacity: 1,
-        y: 0,
-        duration,
-        ease: "power2.out",
-        delay,
-        scrollTrigger: {
-          trigger: el,
-          start: "top 88%",
-          toggleActions: "play none none none",
-        },
-      });
-    }, el);
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      el.classList.add("is-visible");
+      return;
+    }
 
-    return () => {
-      ctx.revert();
-      ScrollTrigger.refresh();
-    };
-  }, [delay, duration, y]);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            window.setTimeout(() => {
+              el.classList.add("is-visible");
+            }, delay * 1000);
+            observer.unobserve(el);
+          }
+        }
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -8% 0px" },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [delay]);
 
-  return createElement(as, { ref, className }, children);
+  const finalClassName = ["reveal", className].filter(Boolean).join(" ");
+
+  return createElement(as, { ref, className: finalClassName }, children);
 }

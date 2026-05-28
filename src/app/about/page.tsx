@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { useMDXComponents } from "@/mdx-components";
+import { MdxRevealer } from "@/components/motion/mdx-revealer";
 
 export const metadata: Metadata = {
   title: "About",
@@ -17,9 +18,9 @@ export default async function AboutPage() {
           <span>cat about.mdx</span>
         </div>
       </header>
-      <div className="prose-content max-w-[68ch]">
+      <MdxRevealer className="prose-content max-w-[68ch]">
         <AboutMDX components={components} />
-      </div>
+      </MdxRevealer>
     </article>
   );
 }

@@ -15,6 +15,12 @@
 
   --font-mono: var(--font-jetbrains), ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* Strong easing curves. The browser defaults feel weak; these have
+     the punch that makes UI feel intentional. From easings.dev. */
+  --ease-out-strong: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out-strong: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 /* Light theme override. AAA-tested on text colors. The chartreuse accent
@@ -77,6 +83,31 @@ html[data-theme="light"] {
     outline-offset: 2px;
     border-radius: 2px;
   }
+
+  /* Press feedback. Every link, button and disclosure summary confirms
+     it heard the press. Subtle scale (0.97) with strong ease-out. */
+  a, button, summary {
+    transition: transform 120ms var(--ease-out-strong);
+  }
+  a:active, button:active, summary:active {
+    transform: scale(0.97);
+  }
+
+  /* Animated <details>. Modern CSS gives us interpolate-size + the
+     ::details-content pseudo to interpolate from 0 to auto. Falls back
+     to instant on browsers without support. */
+  details {
+    interpolate-size: allow-keywords;
+  }
+  details::details-content {
+    block-size: 0;
+    overflow: clip;
+    transition: block-size 350ms var(--ease-drawer),
+                content-visibility 350ms allow-discrete;
+  }
+  details[open]::details-content {
+    block-size: auto;
+  }
 }
 
 @layer utilities {
@@ -129,11 +160,13 @@ html[data-theme="light"] {
     }
   }
 
-  /* Reveal, used by GSAP ScrollTrigger */
+  /* Scroll-reveal. Driven by IntersectionObserver — runs off-main-thread
+     once class is added. Faster than the old 700ms GSAP version. */
   .reveal {
     opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 600ms ease, transform 600ms ease;
+    transform: translateY(10px);
+    transition: opacity 380ms var(--ease-out-strong),
+                transform 380ms var(--ease-out-strong);
   }
   .reveal.is-visible {
     opacity: 1;

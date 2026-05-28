@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { getAllWork, getWorkSlugs } from "@/lib/content";
 import { useMDXComponents } from "@/mdx-components";
+import { MdxRevealer } from "@/components/motion/mdx-revealer";
 import type { Metadata } from "next";
 
 export async function generateStaticParams() {
@@ -86,9 +87,9 @@ export default async function WorkPage({ params }: PageProps) {
       </header>
 
       {/* CONTENT */}
-      <div className="prose-content">
+      <MdxRevealer className="prose-content">
         <MDXContent components={components} />
-      </div>
+      </MdxRevealer>
 
       {/* RELATED */}
       {related.length > 0 && (
@@ -101,7 +102,7 @@ export default async function WorkPage({ params }: PageProps) {
               <li key={r.slug}>
                 <Link
                   href={`/work/${r.slug}`}
-                  className="block border border-border bg-bg-elev p-5 hover:border-accent/50 transition-colors group"
+                  className="block border border-border bg-bg-elev p-5 hover:border-accent/50 hover:-translate-y-0.5 transition-[border-color,transform] duration-200 motion-safe:will-change-transform group"
                 >
                   <div className="font-mono text-[10px] tracking-widest uppercase text-text-dim mb-2">
                     {r.frontmatter.year} · {r.frontmatter.tags.join(", ")}
