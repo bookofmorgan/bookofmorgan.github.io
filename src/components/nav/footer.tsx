@@ -6,16 +6,16 @@ export function Footer() {
           <span className="text-accent">$</span>
           <span>morgan.swan</span>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
           <a
             href="mailto:morganswan@outlook.com?subject=Portfolio%20contact&body=Hey%20Morgan..."
-            className="hover:text-accent transition-colors"
+            className="hover:text-accent transition-colors min-h-[44px] flex items-center px-2"
           >
             email
           </a>
           <a
             href="https://www.linkedin.com/in/morganswan/"
-            className="hover:text-accent transition-colors"
+            className="hover:text-accent transition-colors min-h-[44px] flex items-center px-2"
             target="_blank"
             rel="noreferrer"
           >
@@ -23,7 +23,7 @@ export function Footer() {
           </a>
           <a
             href="https://github.com/bookofmorgan"
-            className="hover:text-accent transition-colors"
+            className="hover:text-accent transition-colors min-h-[44px] flex items-center px-2"
             target="_blank"
             rel="noreferrer"
           >
@@ -31,9 +31,10 @@ export function Footer() {
           </a>
           <a
             href="https://x.com"
-            className="hover:text-accent transition-colors"
+            className="hover:text-accent transition-colors min-h-[44px] flex items-center px-2"
             target="_blank"
             rel="noreferrer"
+            aria-label="X (Twitter)"
           >
             x
           </a>

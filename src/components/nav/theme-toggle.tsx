@@ -33,21 +33,25 @@ export function ThemeToggle() {
     return (
       <span
         aria-hidden
-        className="inline-block w-[3.5rem] h-[1.4rem] font-mono text-[11px]"
+        className="inline-block w-7 min-h-[44px] font-mono text-[11px]"
       />
     );
   }
 
   const label = theme === "light" ? "lights off" : "lights on";
+  const glyph = theme === "light" ? "○" : "●";
 
   return (
     <button
       type="button"
       onClick={toggle}
       aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
-      className="font-mono text-[11px] text-text-dim hover:text-accent transition-colors"
+      className="font-mono text-[11px] text-text-dim hover:text-accent transition-colors min-h-[44px] flex items-center px-1"
     >
-      {label}
+      <span className="sm:hidden text-base leading-none" aria-hidden>
+        {glyph}
+      </span>
+      <span className="hidden sm:inline">{label}</span>
     </button>
   );
 }

@@ -17,7 +17,7 @@ export function NavLinks({ showBlog }: { showBlog: boolean }) {
     : baseLinks;
 
   return (
-    <nav className="flex items-center gap-1 md:gap-2 font-mono text-xs md:text-sm">
+    <nav className="flex items-center gap-0.5 sm:gap-1 md:gap-2 font-mono text-xs md:text-sm">
       {links.map((link) => {
         const active =
           pathname === link.href || pathname.startsWith(link.href + "/");
@@ -26,13 +26,13 @@ export function NavLinks({ showBlog }: { showBlog: boolean }) {
             key={link.href}
             href={link.href}
             className={cn(
-              "px-3 py-1.5 transition-colors border border-transparent",
+              "px-2 sm:px-3 min-h-[44px] flex items-center transition-colors border border-transparent",
               active
                 ? "text-accent border-accent/40"
                 : "text-text-dim hover:text-text",
             )}
           >
-            <span className={active ? "text-accent" : "text-text-fade"}>
+            <span className={cn("hidden sm:inline", active ? "text-accent" : "text-text-fade")}>
               ./
             </span>
             {link.label}
