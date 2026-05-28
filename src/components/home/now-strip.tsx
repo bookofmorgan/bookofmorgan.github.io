@@ -10,7 +10,7 @@ export function NowStrip() {
         </div>
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
           <p className="font-sans text-xl md:text-2xl text-text leading-snug max-w-[58ch]">
-            Shipping Elliot, an AI recruitment agent, with a team of three and a
+            Shipping Elliot, an AI recruitment agent, with a team of two and a
             first paying customer. Watching one number: first-call completion to
             interview confirmation.
           </p>

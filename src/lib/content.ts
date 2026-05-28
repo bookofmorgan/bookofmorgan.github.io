@@ -7,13 +7,20 @@ import { z } from "zod";
 
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 
+// Taxonomy: real product-work verbs, not artifact filing labels.
+// research     — interviews, validation, JTBD, synthesis
+// design       — UX, UI, branding, visual identity
+// build        — code, AI engineering, prototypes, demos
+// strategy     — GTM, business model, positioning, value props
+// facilitation — workshops, alignment, retrospectives, team ops
+// venture      — 0-1 end-to-end, founder mode, customer development
 export const WorkTagSchema = z.enum([
-  "pmf",
-  "app",
-  "code",
-  "business-model",
-  "flowchart",
-  "ui",
+  "research",
+  "design",
+  "build",
+  "strategy",
+  "facilitation",
+  "venture",
 ]);
 
 export const WorkFrontmatterSchema = z.object({

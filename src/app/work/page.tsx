@@ -20,7 +20,7 @@ export default function WorkIndexPage() {
           Work
         </h1>
         <p className="font-sans text-lg text-text-dim max-w-[60ch]">
-          Case studies in zero-to-one product work. Hypotheses, canvases, and
+          Case studies in zero-to-one product work. Hypotheses, canvases and
           the things that shipped.
         </p>
       </header>

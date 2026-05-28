@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     template: "%s · Morgan Swan",
   },
   description:
-    "Portfolio and process notes from zero-to-one product work. Hypotheses, canvases, and the things that shipped.",
+    "Portfolio and process notes from zero-to-one product work. Hypotheses, canvases and the things that shipped.",
   openGraph: {
     title: "Morgan Swan · process notes from zero-to-one product work",
     description:
-      "Portfolio and process notes from zero-to-one product work. Hypotheses, canvases, and the things that shipped.",
+      "Portfolio and process notes from zero-to-one product work. Hypotheses, canvases and the things that shipped.",
     url: SITE_URL,
     siteName: "Morgan Swan",
     type: "website",
@@ -47,6 +47,18 @@ export const metadata: Metadata = {
   },
 };
 
+// Synchronous theme init. Runs before paint to avoid FOUC. Reads stored
+// preference, falls back to system preference, applies data-theme on <html>.
+const themeInitScript = `
+(function () {
+  try {
+    var stored = localStorage.getItem('theme');
+    var theme = stored || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  } catch (e) {}
+})();
+`;
+
 export default function RootLayout({
   children,
 }: {
@@ -56,7 +68,11 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${jetbrains.variable} h-full`}
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-full flex flex-col">
         <LenisProvider>
           <Nav />

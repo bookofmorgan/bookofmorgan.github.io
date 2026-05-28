@@ -66,12 +66,14 @@ export function HeroReveal({ totalProjects }: { totalProjects: number }) {
         data-anim="subhead"
         className="font-sans text-lg md:text-xl text-text-dim leading-relaxed max-w-[60ch] mt-8"
       >
-        shipping zero-to-one{" "}
+        zero-to-one{" "}
         <span className="font-mono text-text-fade">//</span>{" "}
-        hypothesis-driven product work
+        hypothesis-driven{" "}
+        <span className="font-mono text-text-fade">//</span>{" "}
+        product work
       </p>
       <div className="flex flex-wrap gap-2 mt-10">
-        {["pmf", "apps", "code", "business models"].map((t) => (
+        {["research", "design", "build", "strategy", "facilitation", "venture"].map((t) => (
           <span
             key={t}
             data-anim="chips"

@@ -1,15 +1,12 @@
+import { ThemeToggle } from "@/components/nav/theme-toggle";
+
 export function Footer() {
-  const year = new Date().getFullYear();
   return (
     <footer className="border-t border-border mt-32">
       <div className="max-w-[1180px] mx-auto px-6 md:px-10 py-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 font-mono text-xs text-text-dim">
         <div className="flex items-center gap-3">
           <span className="text-accent">$</span>
           <span>morgan.swan</span>
-          <span className="text-text-fade">·</span>
-          <span>process notes</span>
-          <span className="text-text-fade">·</span>
-          <span>{year}</span>
         </div>
         <div className="flex items-center gap-4">
           <a
@@ -19,7 +16,15 @@ export function Footer() {
             email
           </a>
           <a
-            href="https://github.com"
+            href="https://www.linkedin.com/in/morganswan/"
+            className="hover:text-accent transition-colors"
+            target="_blank"
+            rel="noreferrer"
+          >
+            linkedin
+          </a>
+          <a
+            href="https://github.com/bookofmorgan"
             className="hover:text-accent transition-colors"
             target="_blank"
             rel="noreferrer"
@@ -34,6 +39,7 @@ export function Footer() {
           >
             x
           </a>
+          <ThemeToggle />
         </div>
       </div>
     </footer>
